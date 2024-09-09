@@ -5,10 +5,10 @@ import { AuthContext } from '../../../Providers/AuthProvider'
 
 const Navber = () => {
 
-    const { user, userSignout } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
     const handleSignOut = () => {
-        userSignout()
+        logOut()
             .then(result => {
                 console.log(result)
             })
@@ -70,14 +70,21 @@ const Navber = () => {
                             links
                         }
                     </ul>
-                    {
-                        user ?
-                            <button onClick={handleSignOut} className='py-2 px-4 rounded-md bg-yellow-500 text-white'>Log Out</button>
-                            :
-                            <Link to='/login' className="ml-8 flex items-center">
-                                <button className="py-2 px-5 rounded-md bg-yellow-500 text-white">LogIn</button>
-                            </Link>
-                    }
+                    <div className='flex items-center'>
+                        {
+                            user ?
+                                <div className="ml-8  ">
+                                    <button onClick={handleSignOut} className=' py-2 px-4 btn rounded-md bg-yellow-500 text-white border-none'>Log Out</button>
+                                </div>
+                                :
+                                <Link to='/login' className="ml-8 ">
+                                    <button className=" btn py-2 px-5 rounded-md bg-yellow-500 text-white border-none">LogIn</button>
+                                </Link>
+                        }
+                    </div>
+
+
+
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Navber from '../Shared/Navber/Navber'
 import { Link } from 'react-router-dom'
-import { FaFacebook, FaGoogle } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../../Providers/AuthProvider';
 
@@ -70,22 +70,22 @@ const CreateAccount = () => {
                                     <input type="password" name='comfirmPassword' placeholder="Confrim Passowrd" className="outline-none border-b-2 border-b-black/20 py-2" />
                                 </div>
 
-                                <div className="form-control mt-6 mb-3">
-                                    <button className="p-3 text-white font-bold w-full bg-yellow-500">Create an account</button>
+                                <div className=" form-control mt-6 mb-3">
+                                    <button className="btn p-3 text-white font-bold w-full bg-yellow-500">Create an account</button>
                                 </div>
-                                <p className='text-center' >Already have an account? <Link to='/logIn' className='text-yellow-500 font-semibold'> Login</Link></p>
+                                <p className=' text-center' >Already have an account? <Link to='/logIn' className='text-yellow-500 font-semibold'> Login</Link></p>
                             </form>
                         </div>
                         <div className="divider">OR</div>
 
                         <div className='space-y-3'>
-                            <div className='btn flex items-center border justify-center gap-4 font-semibold p-2 rounded-3xl'>
+                            <div onClick={handleFacebook} className='btn flex items-center border justify-center gap-4 font-semibold p-2 rounded-3xl'>
                                 <FaFacebook className='text-blue-500 text-4xl' />
-                                <button onClick={handleFacebook} className=''>Continue with Facebook</button>
+                                <button  className=''>Continue with Facebook</button>
                             </div>
-                            <div className='btn flex items-center border justify-center gap-4 font-semibold p-2 rounded-3xl'>
+                            <div onClick={handleGoogle} className='btn flex items-center border justify-center gap-4 font-semibold p-2 rounded-3xl'>
                                 <FcGoogle className=' text-4xl' />
-                                <button onClick={handleGoogle} className=''>Continue with Google</button>
+                                <button  className=''>Continue with Google</button>
                             </div>
                         </div>
                     </div>

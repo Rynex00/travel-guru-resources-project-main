@@ -1,15 +1,44 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navber from '../Shared/Navber/Navber'
 import { Link } from 'react-router-dom'
-import { FaFacebook, FaGoogle } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from '../../Providers/AuthProvider';
 
 
 
 const LogIn = () => {
 
+    const {signIn, GoogleUser, facebookUser } = useContext(AuthContext);
+ 
     const handleLogIn = e => {
+        e.preventDefault();
 
+        const form = new FormData(e.currentTarget)
+        const email = form.get('email')
+        const password = form.get('password')
+
+        console.log(email, password);
+
+        signIn(email, password)
+        .then(result => {
+            console.log(result.user);
+        })
+        .catch(error => {
+            console.log(error)
+        })
+
+    }
+
+    const handleGoogle = () => {
+        GoogleUser()
+            .then()
+            .catch()
+    }
+    const handleFacebook = () => {
+        facebookUser()
+            .then()
+            .catch()
     }
 
     return (
@@ -18,14 +47,14 @@ const LogIn = () => {
             <div className="container mx-auto flex justify-center bg-white pt-32">
                 <div className=" flex-col lg:flex-row-reverse">
                     <div className="  w-[438px] border-2">
-                        <form className="card-body">
+                        <form onSubmit={handleLogIn} className="card-body">
                             <h2 className='text-3xl font-bold py-4'>Login</h2>
 
                             <div className="form-control py-4">
-                                <input type="email" placeholder="Username or Email" className="outline-none border-b-2 border-b-black/20 py-2" required />
+                                <input type="email" name='email' placeholder="Username or Email" className="outline-none border-b-2 border-b-black/20 py-2" required />
                             </div>
                             <div className="form-control">
-                                <input type="email" placeholder="Passowrd" className="outline-none border-b-2 border-b-black/20 py-2" required />
+                                <input type="password" name='password' placeholder="Passowrd" className="outline-none border-b-2 border-b-black/20 py-2" required />
                             </div>
                             <div className='flex justify-between items-center'>
                                 <div>
@@ -46,13 +75,13 @@ const LogIn = () => {
                     <div className="divider">OR</div>
 
                     <div className='space-y-3'>
-                        <div className='flex items-center border justify-center gap-4 font-semibold p-2 rounded-3xl'>
+                        <div onClick={handleFacebook} className='btn flex items-center border justify-center gap-4 font-semibold p-2 rounded-3xl'>
                             <FaFacebook className='text-blue-500 text-4xl' />
-                            <button className=''>Continue with Facebook</button>
+                            <button  className=''>Continue with Facebook</button>
                         </div>
-                        <div className='flex items-center border justify-center gap-4 font-semibold p-2 rounded-3xl'>
+                        <div onClick={handleGoogle} className='btn flex items-center border justify-center gap-4 font-semibold p-2 rounded-3xl'>
                             <FcGoogle className=' text-4xl' />
-                            <button className=''>Continue with Google</button>
+                            <button  className=''>Continue with Google</button>
                         </div>
                     </div>
                 </div>

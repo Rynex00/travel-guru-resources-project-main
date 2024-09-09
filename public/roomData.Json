@@ -1,0 +1,134 @@
+{
+  "rooms": [
+    {
+      "room_id": 1,
+      "hotel_name": "Beachfront Escape Hotel",
+      "name": "Lounge & Pool - Cox's Bazar (r&r + b&b)",
+      "location": {
+        "city": "Cox's Bazar",
+        "country": "Bangladesh",
+        "address": "789 Beach Road, Cox's Bazar"
+      },
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "Kitchen",
+        "Pool",
+        "Cancellation Flexibility"
+      ],
+      "rating": 5.0,
+      "reviews": 20,
+      "price_per_night": 50,
+      "currency": "USD",
+      "total_price": 185
+    },
+    {
+      "room_id": 2,
+      "hotel_name": "Mangrove Eco Resort",
+      "name": "Lounge & Pool - Sundarbans (r&r + b&b)",
+      "location": {
+        "city": "Sundarbans",
+        "country": "Bangladesh",
+        "address": "Sundarbans Forest Reserve, Khulna"
+      },
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "Kitchen",
+        "Pool",
+        "Cancellation Flexibility"
+      ],
+      "rating": 4.9,
+      "reviews": 22,
+      "price_per_night": 55,
+      "currency": "USD",
+      "total_price": 200
+    },
+    {
+      "room_id": 3,
+      "hotel_name": "Tea Garden Villa",
+      "name": "Lounge & Pool - Sreemangal (r&r + b&b)",
+      "location": {
+        "city": "Sreemangal",
+        "country": "Bangladesh",
+        "address": "Tea Estate Road, Sreemangal"
+      },
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "Kitchen",
+        "Pool",
+        "Cancellation Flexibility"
+      ],
+      "rating": 4.8,
+      "reviews": 28,
+      "price_per_night": 48,
+      "currency": "USD",
+      "total_price": 180
+    },
+    {
+      "room_id": 4,
+      "hotel_name": "Coral Paradise Resort",
+      "name": "Lounge & Pool - St. Martin's Island (r&r + b&b)",
+      "location": {
+        "city": "St. Martin's Island",
+        "country": "Bangladesh",
+        "address": "Coral Beach Road, St. Martin's Island"
+      },
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "Kitchen",
+        "Pool",
+        "Cancellation Flexibility"
+      ],
+      "rating": 5.0,
+      "reviews": 18,
+      "price_per_night": 60,
+      "currency": "USD",
+      "total_price": 210
+    },
+    {
+      "room_id": 5,
+      "hotel_name": "Forest Retreat Lodge",
+      "name": "Lounge & Pool - Sundarbans (r&r + b&b)",
+      "location": {
+        "city": "Sundarbans",
+        "country": "Bangladesh",
+        "address": "Sundarbans National Park"
+      },
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "Kitchen",
+        "Pool",
+        "Cancellation Flexibility"
+      ],
+      "rating": 4.9,
+      "reviews": 30,
+      "price_per_night": 53,
+      "currency": "USD",
+      "total_price": 195
+    }
+  ]
+}

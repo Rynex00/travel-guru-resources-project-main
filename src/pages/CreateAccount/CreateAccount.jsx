@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Navber from '../Shared/Navber/Navber'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../../Providers/AuthProvider';
@@ -8,7 +8,9 @@ import { AuthContext } from '../../Providers/AuthProvider';
 
 const CreateAccount = () => {
 
-    const { createUser, GoogleUser, facebookUser } = useContext(AuthContext)
+    const navigate = useNavigate();
+    const { createUser, GoogleUser, facebookUser } = useContext(AuthContext);
+
 
     const handelCreateAccount = e => {
         e.preventDefault();
@@ -25,6 +27,7 @@ const CreateAccount = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+                navigate('/logIn')
             })
             .catch(error => {
                 console.log(error)
@@ -81,11 +84,11 @@ const CreateAccount = () => {
                         <div className='space-y-3'>
                             <div onClick={handleFacebook} className='btn flex items-center border justify-center gap-4 font-semibold p-2 rounded-3xl'>
                                 <FaFacebook className='text-blue-500 text-4xl' />
-                                <button  className=''>Continue with Facebook</button>
+                                <button className=''>Continue with Facebook</button>
                             </div>
                             <div onClick={handleGoogle} className='btn flex items-center border justify-center gap-4 font-semibold p-2 rounded-3xl'>
                                 <FcGoogle className=' text-4xl' />
-                                <button  className=''>Continue with Google</button>
+                                <button className=''>Continue with Google</button>
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navber from '../Shared/Navber/Navber'
 import booking from '../../assets/Rectangle 1.png'
+import { Link, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../Providers/AuthProvider'
 
 const Booking = () => {
+
+    const navigator = useNavigate()
+
+
+
     return (
         <div className='bg-black/40 max-h-full md:h-auto bg-blend-multiply bg-cover'
             style={{ backgroundImage: `url(${booking})` }}>
@@ -50,7 +57,7 @@ const Booking = () => {
 
 
                             <div className="form-control mt-6">
-                                <button className="btn bg-yellow-500">Start Booking</button>
+                                <Link to='/allHotel' ><button className="btn bg-yellow-500">Start Booking</button></Link>
                             </div>
                         </form>
                     </div>

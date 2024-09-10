@@ -10,6 +10,10 @@ import Contact from '../pages/Contact/Contact'
 import Booking from '../pages/Booking/Booking'
 import LogIn from '../pages/LogIn/LogIn'
 import CreateAccount from '../pages/CreateAccount/CreateAccount'
+import StayInRoom from '../pages/Allroom/StayInRoom/StayInRoom'
+import PrivatRouter from './PrivatRouter'
+import AllHotel from '../pages/Allroom/AllHotel/AllHotel'
+import RoomDatiles from '../pages/Allroom/RoomDatiles/RoomDatiles'
 
 const router = createBrowserRouter([
     {
@@ -49,6 +53,21 @@ const router = createBrowserRouter([
                 path: '/contact',
                 element: <Contact />,
             },
+            {
+                path: '/allHotel',
+                loader: () => fetch('/categories.json'),
+                element: <AllHotel />,
+            },
+            {
+                path: '/allhotell/:allhotellid',
+                element: <RoomDatiles />,
+                loader: () => fetch('/categories.json')
+            },
+            {
+                path: '/stayInRoom',
+                element: <PrivatRouter><StayInRoom /></PrivatRouter>,
+            }
+
         ]
     }
 ])
